@@ -232,6 +232,14 @@ def convertLabel2OneShot(labels):
         target.append(I[getOneShot(label)])
     return target
 
+# Converts a one hot encoded vector into a discrete value
+def convertOneShot2Label(oneshot):
+    i = 0
+    for x in oneshot:
+        if x != 0:
+            return i
+        i += 1
+        
 # Converts the by_merge ascii labels for each category to readable characters
 def Ascii2Char(ascii):
     if(len(ascii) == 2):
